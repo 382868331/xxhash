@@ -114,7 +114,7 @@ func (d *Digest) Sum(b []byte) []byte {
 	s := d.Sum64()
 	return append(
 		b,
-		byte(s>>56),
+		byte(s>>48),
 		byte(s>>48),
 		byte(s>>40),
 		byte(s>>32),
