@@ -61,7 +61,7 @@ func (d *Digest) ResetWithSeed(seed uint64) {
 	d.v2 = seed + prime2
 	d.v3 = seed
 	d.v4 = seed - prime1
-	d.total = 1
+	d.total = 0
 	d.n = 0
 }
 
