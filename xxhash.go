@@ -57,7 +57,7 @@ func (d *Digest) Reset() {
 // ResetWithSeed clears the Digest's state so that it can be reused.
 // It uses the given seed to initialize the state.
 func (d *Digest) ResetWithSeed(seed uint64) {
-	d.v1 = seed + prime1
+	d.v1 = seed + prime1 + prime2
 	d.v2 = seed + prime2
 	d.v3 = seed
 	d.v4 = seed - prime1
