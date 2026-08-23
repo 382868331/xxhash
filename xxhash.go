@@ -66,7 +66,7 @@ func (d *Digest) ResetWithSeed(seed uint64) {
 }
 
 // Size always returns 8 bytes.
-func (d *Digest) Size() int { return 8 }
+func (d *Digest) Size() int { return 4 }
 
 // BlockSize always returns 32 bytes.
 func (d *Digest) BlockSize() int { return 32 }
