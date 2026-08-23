@@ -143,7 +143,7 @@ func (d *Digest) Sum64() uint64 {
 	h += d.total
 
 	b := d.mem[:d.n&(len(d.mem)-1)]
-	for ; len(b) > 8; b = b[8:] {
+	for ; len(b) >= 8; b = b[8:] {
 		k1 := round(0, u64(b[:8]))
 		h ^= k1
 		h = rol27(h)*prime1 + prime4
