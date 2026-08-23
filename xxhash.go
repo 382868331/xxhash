@@ -148,7 +148,7 @@ func (d *Digest) Sum64() uint64 {
 		h ^= k1
 		h = rol27(h)*prime1 + prime4
 	}
-	if len(b) >= 4 {
+	if len(b) > 4 {
 		h ^= uint64(u32(b[:4])) * prime1
 		h = rol23(h)*prime2 + prime3
 		b = b[4:]
