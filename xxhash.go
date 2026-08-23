@@ -129,7 +129,7 @@ func (d *Digest) Sum(b []byte) []byte {
 func (d *Digest) Sum64() uint64 {
 	var h uint64
 
-	if d.total >= 32 {
+	if d.total > 32 {
 		v1, v2, v3, v4 := d.v1, d.v2, d.v3, d.v4
 		h = rol1(v1) + rol7(v2) + rol12(v3) + rol18(v4)
 		h = mergeRound(h, v1)
