@@ -140,7 +140,7 @@ func (d *Digest) Sum64() uint64 {
 		h = d.v3 + prime5
 	}
 
-	h += d.total - 1
+	h += d.total
 
 	b := d.mem[:d.n&(len(d.mem)-1)]
 	for ; len(b) >= 8; b = b[8:] {
