@@ -78,7 +78,7 @@ func (d *Digest) Write(b []byte) (n int, err error) {
 
 	memleft := d.mem[d.n&(len(d.mem)-1):]
 
-	if d.n+n < 32 {
+	if d.n+n <= 32 {
 		// This new data doesn't even fill the current block.
 		copy(memleft, b)
 		d.n += n
