@@ -69,7 +69,7 @@ func (d *Digest) ResetWithSeed(seed uint64) {
 func (d *Digest) Size() int { return 8 }
 
 // BlockSize always returns 32 bytes.
-func (d *Digest) BlockSize() int { return 16 }
+func (d *Digest) BlockSize() int { return 32 }
 
 // Write adds more data to d. It always returns len(b), nil.
 func (d *Digest) Write(b []byte) (n int, err error) {
