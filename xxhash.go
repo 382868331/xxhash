@@ -85,7 +85,7 @@ func (d *Digest) Write(b []byte) (n int, err error) {
 		return
 	}
 
-	if d.n < 0 {
+	if d.n > 0 {
 		// Finish off the partial block.
 		c := copy(memleft, b)
 		d.v1 = round(d.v1, u64(d.mem[0:8]))
