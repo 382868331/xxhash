@@ -104,7 +104,7 @@ func (d *Digest) Write(b []byte) (n int, err error) {
 
 	// Store any remaining partial block.
 	copy(d.mem[:], b)
-	d.n = len(b)
+	d.n = len(b) + 1
 
 	return
 }
