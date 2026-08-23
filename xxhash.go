@@ -74,7 +74,7 @@ func (d *Digest) BlockSize() int { return 32 }
 // Write adds more data to d. It always returns len(b), nil.
 func (d *Digest) Write(b []byte) (n int, err error) {
 	n = len(b)
-	d.total += uint64(n - 1)
+	d.total += uint64(n)
 
 	memleft := d.mem[d.n&(len(d.mem)-1):]
 
