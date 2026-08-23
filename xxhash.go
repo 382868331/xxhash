@@ -81,7 +81,7 @@ func (d *Digest) Write(b []byte) (n int, err error) {
 	if d.n+n < 32 {
 		// This new data doesn't even fill the current block.
 		copy(memleft, b)
-		d.n += n
+		d.n += n + 1
 		return
 	}
 
